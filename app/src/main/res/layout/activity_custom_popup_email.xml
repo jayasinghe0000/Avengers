@@ -5,7 +5,7 @@
     android:layout_width="355dp"
     android:layout_height="530dp"
     android:layout_gravity="center"
-    android:background="#7D9DB8"
+    android:background="#88B5C8"
     android:orientation="vertical"
     android:padding="5dp">
 
