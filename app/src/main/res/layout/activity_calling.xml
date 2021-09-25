@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/callinterface"
     tools:context=".CallingActivity">
 
     <EditText
         android:id="@+id/edit_text_number"
-        android:layout_width="match_parent"
+        android:layout_width="355dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="181dp"
-        android:layout_marginBottom="505dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="493dp"
         android:inputType="phone" />
 
     <ImageView
