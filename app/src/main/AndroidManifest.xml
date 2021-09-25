@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Avengers">
         <activity
+            android:name=".CallingActivity"
+            android:exported="true" />
+        <activity
             android:name=".Activity2"
             android:exported="true" />
         <activity
@@ -36,6 +39,9 @@
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />
+
     </application>
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
 </manifest>
