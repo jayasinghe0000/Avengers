@@ -10,10 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Avengers">
         <activity
+            android:name=".Activity2"
+            android:exported="true" />
+        <activity
+            android:name=".Activity1"
+            android:exported="true" />
+        <activity
+            android:name=".CategoryDisplayActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.avengers.SplashScreenActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,12 +31,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.avengers.StartActivity"
+            android:name=".StartActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.avengers.SignUpActivity"
+            android:name=".SignUpActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>
