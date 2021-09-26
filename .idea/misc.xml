@@ -10,31 +10,13 @@
         <entry key="..\:/MAD Project(Avengers)/Avengers/app/src/main/res/layout/activity_start.xml" value="0.22" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Avengers/app/src/main/res/layout/activity_1.xml" value="0.165625" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Avengers/app/src/main/res/layout/activity_category_display.xml" value="0.22" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/Avengers/app/src/main/res/layout/activity_computing.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Avengers/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Avengers/app/src/main/res/layout/activity_popup.xml" value="0.109375" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Avengers/app/src/main/res/layout/activity_sign_up.xml" value="0.1796875" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Avengers/app/src/main/res/layout/activity_splash_screen.xml" value="0.1796875" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/Avengers/app/src/main/res/layout/activity_start.xml" value="0.1796875" />
-<<<<<<< HEAD
-=======
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/drawable/buttonshape.xml" value="0.2703125" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/drawable/buttonshape1.xml" value="0.2703125" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/drawable/cerclebackground.xml" value="0.2703125" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/drawable/input_backgrounds.xml" value="0.2703125" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/drawable/item_selector.xml" value="0.2703125" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/activity_calling.xml" value="0.25416666666666665" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/activity_category_display.xml" value="0.25416666666666665" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/activity_custom_popup_email.xml" value="0.25416666666666665" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/activity_popup.xml" value="0.25416666666666665" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/activity_start.xml" value="0.25416666666666665" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/popupM.xml" value="0.13020833333333334" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/layout/popup_message.xml" value="0.13020833333333334" />
-        <entry key="..\:/Y2S2/MAD/PjtUI/Avengers/app/src/main/res/menu/item_menu.xml" value="0.13020833333333334" />
->>>>>>> 8bcf77e95f7dcbb88f6ad30efc52841a886e0de6
+        <entry key="..\:/Users/USER/AndroidStudioProjects/Avengers/app/src/main/res/layout/single_row.xml" value="0.16770833333333332" />
       </map>
     </option>
   </component>
