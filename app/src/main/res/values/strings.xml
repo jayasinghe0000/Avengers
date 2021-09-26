@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Avengers</string>
+    <string name="invalid_mobile">Enter valied mobile number</string>
 </resources>
