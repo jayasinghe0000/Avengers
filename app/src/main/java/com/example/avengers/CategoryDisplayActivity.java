@@ -61,7 +61,7 @@ public class CategoryDisplayActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if(finalI == 0)
                     {
-                        Intent intent = new Intent(CategoryDisplayActivity.this,Activity1.class);
+                        Intent intent = new Intent(CategoryDisplayActivity.this,computing.class);
                         startActivity(intent);
                     }
                     else if(finalI == 1){
