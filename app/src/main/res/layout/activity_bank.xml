@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg3"
     tools:context=".MainActivity">
 
 
     <include
         android:id="@+id/include3"
         layout="@layout/toolbar"
+        android:background="@drawable/buttonshape1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -33,13 +35,15 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColor="#0B0B0B"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintStart_toEndOf="@+id/bank_nme"
         app:layout_constraintTop_toBottomOf="@+id/bank_topText"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -60,8 +64,8 @@
         android:id="@+id/holder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="36dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -87,11 +91,10 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
         android:layout_marginTop="72dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include3"
-        app:srcCompat="@drawable/money_protectionnew" />
+        app:srcCompat="@drawable/pay_method2new" />
 
     <TextView
         android:id="@+id/bank_topText"
@@ -143,9 +146,8 @@
         android:id="@+id/bank_img3"
         android:layout_width="400dp"
         android:layout_height="80dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bank_bottonText"
         app:srcCompat="@drawable/my_check" />
@@ -163,24 +165,25 @@
 
     <ImageView
         android:id="@+id/painter_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
+        android:layout_width="37dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="172dp"
         android:src="@drawable/ic_baseline_arrow_downward_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bank_img3" />
 
     <TextView
         android:id="@+id/rout_no"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="109dp"
+        android:layout_height="30dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="2dp"
         android:text="@string/routNo"
         android:textColor="#090909"
         android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/acc_no"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
@@ -189,7 +192,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
@@ -202,7 +205,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
@@ -212,10 +215,10 @@
 
     <TextView
         android:id="@+id/acc_no"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="148dp"
+        android:layout_width="115dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="120dp"
         android:text="@string/accountNo"
         android:textColor="#0E0E0E"
         android:textSize="16sp"
@@ -224,22 +227,24 @@
 
     <Button
         android:id="@+id/button_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:background="#009688"
+        android:layout_width="153dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/buttonshape1"
         android:text="@string/save"
-        android:textColor="#000000"
+        android:textColor="#0081D1"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/include3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/acc_no" />
 
     <TextView
         android:id="@+id/bank_nme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="113dp"
+        android:layout_height="30dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="44dp"
         android:text="Bank Name"

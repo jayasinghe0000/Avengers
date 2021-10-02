@@ -3,27 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".HireDetail"
-    android:backgroundTint="#009688"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3"
     android:orientation="vertical">
-
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FF009688"
+        android:layout_height="wrap_content"
+        android:background="#0081D1"
         app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
         app:title="Hire Detail"
         app:titleTextColor="@color/white">
-    </androidx.appcompat.widget.Toolbar>
 
+
+    </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/hire_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
@@ -43,7 +42,7 @@
             android:inputType="text"
             android:textColor="@color/black"
             android:textCursorDrawable="@null"
-            tools:ignore="TouchTargetSizeCheck">
+            android:textSize="20sp">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -71,7 +70,8 @@
             android:layout_height="match_parent"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textCursorDrawable="@null">
+            android:textCursorDrawable="@null"
+            android:textSize="20sp">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -99,7 +99,8 @@
             android:layout_height="match_parent"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textCursorDrawable="@null">
+            android:textCursorDrawable="@null"
+            android:textSize="20sp">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
@@ -126,7 +127,8 @@
             android:layout_height="match_parent"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textCursorDrawable="@null">
+            android:textCursorDrawable="@null"
+            android:textSize="20sp">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -154,12 +156,12 @@
             android:layout_height="match_parent"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textCursorDrawable="@null">
+            android:textCursorDrawable="@null"
+            android:textSize="20sp">
 
         </com.google.android.material.textfield.TextInputEditText>
 
     </com.google.android.material.textfield.TextInputLayout>
-
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -184,7 +186,8 @@
             android:layout_height="match_parent"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textCursorDrawable="@null">
+            android:textCursorDrawable="@null"
+            android:textSize="20sp">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -210,10 +213,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="text"
             android:hint="dd-mm-yy"
+            android:inputType="text"
             android:textColor="@color/black"
-            android:textCursorDrawable="@null">
+            android:textCursorDrawable="@null"
+            android:textSize="20sp">
 
         </com.google.android.material.textfield.TextInputEditText>
 
@@ -222,15 +226,19 @@
 
     <Button
         android:id="@+id/hire_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="209dp"
+        android:layout_height="58dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="30dp"
-        android:background="@null"
-        android:backgroundTint="#FF009688"
+        android:backgroundTint="#0EAEF6"
+        android:onClick="call"
+        android:shadowColor="@color/white"
         android:text="Next"
+        android:textColor="#E3E3EC"
+        android:textSize="20sp"
+        app:cornerRadius="15dp"
         tools:ignore="SpeakableTextPresentCheck">
 
     </Button>
-
 
 </LinearLayout>

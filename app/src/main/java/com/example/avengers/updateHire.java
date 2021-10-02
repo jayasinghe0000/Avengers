@@ -1,10 +1,15 @@
 package com.example.avengers;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,10 +17,12 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class updateHire extends AppCompatActivity {
 
+
     private TextInputLayout t1,t2,t3,t4,t5,t6,t7;
     private DbHandler dbHandler;
     private Button btn;
     private Context context;
+    private Dialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +50,19 @@ public class updateHire extends AppCompatActivity {
         String data7 = b.getString("uDate");
 
         t1.getEditText().setText(data1);
+        t1.setEnabled(false);
         t2.getEditText().setText(data2);
+        t2.setEnabled(false);
         t3.getEditText().setText(data3);
+        t3.setEnabled(false);
         t4.getEditText().setText(data4);
+        // t4.setEnabled(false);
         t5.getEditText().setText(data5);
+        //t5.setEnabled(false);
         t6.getEditText().setText(data6);
+        t6.setEnabled(false);
         t7.getEditText().setText(data7);
+        //  t7.setEnabled(false);
 
 
 
@@ -62,16 +76,75 @@ public class updateHire extends AppCompatActivity {
                 String udes=t5.getEditText().getText().toString();
                 String uduration=t6.getEditText().getText().toString();
                 String udate=t7.getEditText().getText().toString();
-              //String todoDes=editdes.getText().toString();
+                //String todoDes=editdes.getText().toString();
 
 
                 //save object with updated values
-                HireModel hire=new HireModel(uname,Integer.parseInt(uphone),uemail,ulocation,udate,Integer.parseInt(uduration),udes);
-                int state=dbHandler.updateHire(hire);
-                System.out.println(state);
-                startActivity(new Intent(context,MainActivity.class));
+//                HireModel hire=new HireModel(uname,Integer.parseInt(uphone),uemail,ulocation,udate,Integer.parseInt(uduration),udes);
+//                int state=dbHandler.updateHire(hire);
+//                System.out.println(state);
+//                startActivity(new Intent(context,MainActivity.class));
+
+                boolean isUpdate=dbHandler.updateHireDetail(uemail,uname,uphone,ulocation,udes,uduration,udate);
+                if(isUpdate==true){
+                    Toast.makeText(updateHire.this, "Successfully Updated", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder builder =  new AlertDialog.Builder(context);
+                    builder.setTitle("Updated Details");
+                    builder.setMessage("Customer : "+uname+"\n"+"Email : "+uemail+"\n"+"Phone : "+uphone+"\n"+
+                            "Work Location : "+ulocation+"\n"+"Contract : "+udes+"\n"+"Completion Duration : "+uduration+"\n"+
+                            "Starting Date : "+udate);
+
+                    builder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            startActivity(new Intent(context,displayHire.class));
+                        }
+                    });
+                    builder.show();
+                }else{
+                    Toast.makeText(updateHire.this, "Unsuccessful Update", Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
+
+
+
+
+
+//        //dialog box
+//        dialog = new Dialog(context);
+//        dialog.setContentView(R.layout.update_dialog);
+//        dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.popup_background));
+//        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+//        dialog.setCancelable(false);
+//
+//        Button yes = findViewById(R.id.btn_Yes);
+//        Button no = findViewById(R.id.btn_No);
+
+//                yes.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        startActivity(new Intent(context,updateHire.class));
+//                        dialog.dismiss();
+//                });
+
+//               yes.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                startActivity(new Intent(context,updateHire.class));
+//                      dialog.dismiss();
+//               }
+//           });
+//
+//               no.setOnClickListener(new View.OnClickListener() {
+//                   @Override
+//                   public void onClick(View v) {
+//                       startActivity(new Intent(context,category.class));
+//                       dialog.dismiss();
+//                   }
+//               });
+
 
 
 

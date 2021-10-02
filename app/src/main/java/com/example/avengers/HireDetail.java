@@ -84,7 +84,7 @@ public class HireDetail extends AppCompatActivity {
         //String d=intent3.getStringExtra(profile.EXTRA_MESSAGE2);
         //System.out.println(d);
 
-        Intent myIntent=new Intent(context, com.example.com.example.avengers.MainActivity.class);
+        Intent myIntent=new Intent(context, com.example.avengers.MainActivity.class);
         myIntent.putExtras(getIntent().getExtras());
         myIntent.putExtra("data2",String.valueOf(uTime));
         myIntent.putExtra("cusName",uName);

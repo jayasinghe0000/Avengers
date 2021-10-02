@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Avengers">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".profileNw"
+            android:exported="true" />
+        <activity
+            android:name=".disputes"
+            android:exported="true" />
+        <activity
             android:name=".Computing"
             android:exported="true" />
         <activity

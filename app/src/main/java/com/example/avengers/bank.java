@@ -18,7 +18,6 @@ import java.util.List;
 
 public class bank extends AppCompatActivity {
 
-
     private final String CHANNEL_ID = "Prsonal Notifcation";
     private final int NOTI_ID = 001;
 
@@ -74,7 +73,7 @@ public class bank extends AppCompatActivity {
 
                 Intent intent = new Intent(context, displayHire.class);
                 //intent.putExtra("hire_id", String.valueOf(hire.getId()));
-               // intent.putExtras(getIntent().getExtras());
+                // intent.putExtras(getIntent().getExtras());
                 intent.putExtras(getIntent().getExtras());
                 startActivity(intent);
 //                dbHandler.getSingleHire();

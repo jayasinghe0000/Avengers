@@ -11,161 +11,342 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-//public class DbHandler extends SQLiteOpenHelper {
-//
-////    private static final int VERSION =1;
-////    private static final String DB_NAME= "Worker";
-////    private static final String TABLE_NAME ="Worker";
-////
-////    private static final String ID = "id ";
-////    private static final String NAME = "name";
-////    private static final String EMAIl = "email";
-////    private static final String PRICE ="price";
-////    private static final String CATEGORY = "category";
-//
-//    //description about database
-//    private static final int VERSION =1;
-//    private static final String DB_NAME ="w"; //database name
-//    private static final String TABLE_NAME ="w"; // data  table name
-//
-//    //create column
-//    private static final String ID = "id";
-//    private static final String NAME ="name";
-//    private static final String EMAIl ="email";
-//    private static final String PRICE="price";
-//    private static final String CATEGORY ="category";
-//
-//
-//
-//    //Default constructor
-//    public DbHandler(@Nullable Context context) {
-//        super(context,DB_NAME,null,VERSION);
-//    }
-//
-//    @Override
-//    public void onCreate(SQLiteDatabase db) {
-//
-//        String TABLE_CREATE_QUERY = "CREATE TABLE "+TABLE_NAME+" " +
-//                "("
-//                +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
-//                +NAME + " TEXT,"
-//                +EMAIl+ " TEXT,"
-//                +PRICE+ " TEXT,"
-//                +CATEGORY+" TEXT" +
-//                ");";
-//
-//        /*
-//            CREATE TABLE todo (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, description TEXT,
-//            started TEXT,finished TEXT); */
-//
-//        db.execSQL(TABLE_CREATE_QUERY);
-//        System.out.println("Susscess");
-//    }
-//
-//    @Override
-//    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//
-//        String DROP_TABLE_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME;
-//
-//        //Drop older table if existed
-//        db.execSQL(DROP_TABLE_QUERY);
-//
-//        //create table again
-//        onCreate(db);
-//    }
-//
-//
-//    public void addWorker(Worker workerAdd) {
-//
-//        SQLiteDatabase  sqLiteDatabase = getWritableDatabase();
-//
-//        ContentValues contentValues = new ContentValues();
-//
-//        contentValues.put(NAME, workerAdd.getName());
-//        contentValues.put(EMAIl, workerAdd.getEmail());
-//        contentValues.put(PRICE, workerAdd.getPrice());
-//        contentValues.put(CATEGORY,workerAdd.getCategory());
-//
-//       //save to table
-//        sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
-//        System.out.println("Susscess2");
-//        // close database
-//        sqLiteDatabase.close();
-//
-//
-//    }
-//}
 
 public class DbHandler extends SQLiteOpenHelper {
 
-    //description about database
-    private static final int VERSION =1;
-    private static final String DB_NAME ="workx"; //database name
-    private static final String TABLE_NAME ="workxx"; // data  table name
+    public static final int VERSION=1;//when change db name/table name this version need to change.
+    public static final String DB_NAME="Payment";
+    public static final String TABLE_NAME="Bank";
+    public static final String TABLE_NAME2="Worker";
+    public static final String TABLE_NAME3="Hire";
 
-    //create column
-    private static final String ID = "id";
-    private static final String NAME ="name";
-    private static final String EMAILW ="emailw";
-    private static final String PRICE ="price";
-    private static final String CATEGORY ="category";
+    //column names
+    public static final String BANK_ID= "bank_id";
+    public static final String BANK_NAME="bank_name";
+    public static final String HOLDER="account_holder";
+    public static final String ACC_NO="account_no";
+    public static final String ROU_NO="routing_no";
+
+    //column names
+    public static final String WORKER_ID= "worker_id";
+    public static final String WORKER_NAME="worker_name";
+    public static final String SALARY="salary";
+    public static final String CATEGORY="category";
+
+    //column names
+    public static final String HIRE_ID= "hire_id";
+    //public static final String WORKER_HIRE_ID= "worker_hire_id";
+    public static final String CUSTOMER_NAME="customer_name";
+    public static final String PHONE="phone";
+    public static final String EMAIL="email";
+    public static final String LOCATION="work_location";
+    public static final String DATE="Starting_date";
+    public static final String DURATION="Duration";
+    public static final String DES="Description";
 
 
-    //Default constructor
+
     public DbHandler(@Nullable Context context) {
-        super(context,DB_NAME,null,VERSION);
+        super(context, DB_NAME, null, VERSION);
     }
-
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //table creation query
+        String TABLE_CREATE_QUERY="CREATE TABLE "+TABLE_NAME+" "+
+                " ("
+                +BANK_ID+" INTEGER PRIMARY KEY "+" AUTOINCREMENT,"
+                +BANK_NAME+ " TEXT,"
+                +HOLDER+ " TEXT,"
+                +ACC_NO+ " TEXT,"
+                +ROU_NO+ " TEXT"+
+                ");";//sql semi colon and java semi colon
 
-        String TABLE_CREATE_QUERY = "CREATE TABLE "+TABLE_NAME+" " +
-                "("
-                +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
-                +NAME + " TEXT,"
-                +EMAILW+ " TEXT,"
-                +PRICE+ " TEXT,"
-                +CATEGORY+" TEXT" +
-                ");";
-
-        /*
-            CREATE TABLE todo (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, description TEXT,
-            started TEXT,finished TEXT); */
-
+        //run the query
         db.execSQL(TABLE_CREATE_QUERY);
+
+        //table creation query
+        String TABLE2_CREATE_QUERY="CREATE TABLE "+TABLE_NAME2+" "+
+                " ("
+                +WORKER_ID+" INTEGER PRIMARY KEY "+" AUTOINCREMENT,"
+                +WORKER_NAME+ " TEXT,"
+                +SALARY+ " TEXT,"
+                +CATEGORY+ " TEXT "+
+                ");";//sql semi colon and java semi colon
+
+        //run the query
+        db.execSQL(TABLE2_CREATE_QUERY);
+
+        //table creation query
+        String TABLE3_CREATE_QUERY="CREATE TABLE "+TABLE_NAME3+" "+
+                " ("
+                +HIRE_ID+" INTEGER PRIMARY KEY "+" AUTOINCREMENT,"
+                //+WORKER_HIRE_ID + "INTEGER,"
+                +CUSTOMER_NAME+ " TEXT,"
+                +PHONE+ " TEXT,"
+                +EMAIL+ " TEXT,"
+                +LOCATION+ " TEXT,"
+                +DATE+ " TEXT, "
+                +DURATION+ " TEXT,"
+                +DES+ " TEXT "+
+                // +" FOREIGN KEY  ("+WORKER_HIRE_ID+") REFERENCES "+TABLE_NAME2+"("+WORKER_ID+")" +
+                ");";//sql semi colon and java semi colon
+
+        //run the query
+        db.execSQL(TABLE3_CREATE_QUERY);
+
     }
 
+    //this method automatically updated when change the version
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        //when change the version drop exists table
         String DROP_TABLE_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME;
-
-        //Drop older table if existed
+        //drop table if exited
         db.execSQL(DROP_TABLE_QUERY);
-
         //create table again
         onCreate(db);
 
+        //when change the version drop exists table
+        String DROP_TABLE2_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME2;
+        //drop table if exited
+        db.execSQL(DROP_TABLE2_QUERY);
+        //create table again
+        onCreate(db);
+
+        //when change the version drop exists table
+        String DROP_TABLE3_QUERY = "DROP TABLE IF EXISTS " + TABLE_NAME3;
+        //drop table if exited
+        db.execSQL(DROP_TABLE3_QUERY);
+        //create table again
+        onCreate(db);
+
+
     }
 
-    //Insert data to the database
-//    public void addToDo(ToDoModelClass todo){
-//        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-//
-//        ContentValues contentValues = new ContentValues(); //setting data structure and insert to the data datadase
-//
-//        contentValues.put(TITLE,todo.getTitle());
-//        contentValues.put(DESCRIPTION,todo.getDescription());
-//        contentValues.put(STARTED, todo.getStarted());
-//        contentValues.put(FINISHED,todo.getFinished());
-//
-//        //save data
-//        //sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
-//         sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
-//        //closeTable
-//        sqLiteDatabase.close();
+
+    /*insert Data*/
+
+    public void addWorkerDetails(WorkerModel workerModel){
+
+        //write data into db
+        SQLiteDatabase sqLiteDatabase=getWritableDatabase();
+
+        //create object to store all inserted data
+        ContentValues contentValues=new ContentValues();
+
+        //colomn names and values
+        contentValues.put(WORKER_NAME,workerModel.getWorkerName());
+        contentValues.put(SALARY,workerModel.getSalary());
+        contentValues.put(CATEGORY,workerModel.getCategory());
+
+        //save data to tables.use null to whenever colomn hasn't a value
+        sqLiteDatabase.insert(TABLE_NAME2,null,contentValues);
+
+        //close database
+        sqLiteDatabase.close();
+    }
+
+
+    public void addBankDetails(BankModel bankModel){
+
+        //write data into db
+        SQLiteDatabase sqLiteDatabase=getWritableDatabase();
+
+        //create object to store all inserted data
+        ContentValues contentValues=new ContentValues();
+
+        //colomn names and values
+        contentValues.put(BANK_NAME,bankModel.getBank_name());
+        contentValues.put(HOLDER,bankModel.getAccount_holder());
+        contentValues.put(ACC_NO,bankModel.getAccount_no());
+        contentValues.put(ROU_NO,bankModel.getRouting_no());
+
+        //save data to tables.use null to whenever colomn hasn't a value
+        sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
+
+        //close database
+        sqLiteDatabase.close();
+    }
+
+    public void addHireDetails(HireModel hireModel){
+
+        //write data into db
+        SQLiteDatabase sqLiteDatabase=getWritableDatabase();
+
+        //create object to store all inserted data
+        ContentValues contentValues=new ContentValues();
+
+        //colomn names and values
+        contentValues.put(CUSTOMER_NAME,hireModel.getCustomerName());
+        contentValues.put(PHONE,hireModel.getPhone());
+        contentValues.put(EMAIL,hireModel.getEmail());
+        contentValues.put(LOCATION,hireModel.getLocation());
+        contentValues.put(DATE,hireModel.getDate());
+        contentValues.put(DURATION,hireModel.getDuration());
+        contentValues.put(DES,hireModel.getDescription());
+
+        //save data to tables.use null to whenever colomn hasn't a value
+        sqLiteDatabase.insert(TABLE_NAME3,null,contentValues);
+
+        //close database
+        sqLiteDatabase.close();
+    }
+
+    /*get data*/
+
+    //get all workers
+    public List<WorkerModel > getAllWorkers(String c){
+        List<WorkerModel> workers=new ArrayList<>();
+        SQLiteDatabase db=getReadableDatabase();
+        //String query=" SELECT * FROM "+TABLE_NAME2 ;
+        //Cursor cursor=db.rawQuery(query,null);
+        Cursor cursor=db.query(TABLE_NAME2,new String[]{WORKER_ID,WORKER_NAME,SALARY,CATEGORY},CATEGORY+ "=?",new String[]{c},null,null,null);
+
+        //check whether the table has data.go to first raw.if empty return false
+        if(cursor.moveToFirst()) {
+            do {
+                //create empty workerModel object
+                WorkerModel workerModel=new WorkerModel();
+
+                //set values
+                workerModel.setWorkerId(cursor.getInt(0));
+                workerModel.setWorkerName(cursor.getString(1));
+                workerModel.setSalary(cursor.getInt(2));
+                workerModel.setCategory(cursor.getString(3));
+
+
+                //add todoModel to the list type object
+                workers.add(workerModel);
+
+            } while(cursor.moveToNext());
+        }
+        return workers;
+    }
+
+//    public Cursor getAllData(){
+//        SQLiteDatabase db=getWritableDatabase();
+//        Cursor cursor=db.rawQuery("SELECT * FROM "+ TABLE_NAME2,null);
+//        return cursor;
 //    }
+
+    //get all hires
+
+
+
+
+
+    public List<HireModel > getAllHireDetail(){
+        List<HireModel> hires=new ArrayList<>();
+        SQLiteDatabase db=getReadableDatabase();
+        String query=" SELECT * FROM "+TABLE_NAME3 ;
+        Cursor cursor=db.rawQuery(query,null);
+        //Cursor cursor=db.query(TABLE_NAME2,new String[]{WORKER_ID,WORKER_NAME,SALARY,CATEGORY},CATEGORY+ "=?",new String[]{c},null,null,null);
+
+        //check whether the table has data.go to first raw.if empty return false
+        if(cursor.moveToLast()) {
+            do {
+                //create empty workerModel object
+                HireModel hireModel=new HireModel();
+
+                //set values
+                hireModel.setId(cursor.getInt(0));
+                hireModel.setCustomerName(cursor.getString(1));
+                hireModel.setPhone(cursor.getInt(2));
+                hireModel.setEmail(cursor.getString(3));
+                hireModel.setLocation(cursor.getString(4));
+                hireModel.setDate(cursor.getString(5));
+                hireModel.setDuration(cursor.getInt(6));
+                hireModel.setDescription(cursor.getString(7));
+
+                //add todoModel to the list type object
+                hires.add(hireModel);
+
+            } while(cursor.moveToNext());
+        }
+        return hires;
+    }
+
+    //get singleHire
+    public HireModel getSingleHire(int id){
+        SQLiteDatabase db=getWritableDatabase();
+        Cursor cursor=  db.query(TABLE_NAME3,new String[]{HIRE_ID,CUSTOMER_NAME,PHONE,EMAIL,LOCATION,DATE,DURATION,DES},HIRE_ID+"=?",new String[]{String.valueOf(id)},null,null,null);
+        //inside this String array need gives only the coloums that need to display
+        HireModel hireModel;
+        if(cursor != null) {
+            cursor.moveToLast();
+            hireModel = new HireModel(cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getInt(2),
+                    cursor.getString(3),
+                    cursor.getString(4),
+                    cursor.getString(5),
+                    cursor.getInt(6),
+                    cursor.getString(7));
+            return hireModel;
+        }
+        return  null;
+    }
+
+    //get single Worker
+    public WorkerModel getSingleWorker(int id){
+        SQLiteDatabase db=getWritableDatabase();
+        Cursor cursor=  db.query(TABLE_NAME2,new String[]{WORKER_ID,WORKER_NAME,SALARY,CATEGORY},WORKER_ID+"=?",new String[]{String.valueOf(id)},null,null,null);
+
+        WorkerModel workerModel;
+        if(cursor != null) {
+            cursor.moveToFirst();
+            workerModel = new WorkerModel(cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getInt(2),
+                    cursor.getString(3));
+
+            return workerModel;
+        }
+        return  null;
+    }
+
+
+    //delete hire
+    public void deleteHire(String email){
+        SQLiteDatabase db=getWritableDatabase();
+        db.delete(TABLE_NAME3,EMAIL +"=?",new String[]{email});//convert int id to string
+        db.close();
+    }
+
+
+
+    //Update HireDetail
+    public boolean updateHireDetail(String email, String cusname, String phone, String loc,
+                                    String des, String dur, String s_date) {
+
+        SQLiteDatabase db= getWritableDatabase();
+
+        //create object is store all inserted data
+        ContentValues contentValues =  new ContentValues();
+
+        contentValues.put(EMAIL,email);
+        contentValues.put(CUSTOMER_NAME,cusname);
+        contentValues.put(PHONE,phone);
+        contentValues.put(LOCATION,loc);
+        contentValues.put(DES,des);
+        contentValues.put(DURATION,dur);
+        contentValues.put(DATE,s_date);
+
+//        contentValues.put(CUSTOMER_NAME,hireModel.getCustomerName());
+//        contentValues.put(PHONE,hireModel.getPhone());
+//        contentValues.put(EMAIL,hireModel.getEmail());
+//        contentValues.put(LOCATION,hireModel.getLocation());
+//        contentValues.put(DATE,hireModel.getDate());
+//        contentValues.put(DURATION,hireModel.getDuration());
+//        contentValues.put(DES,hireModel.getDescription());
+
+        db.update(TABLE_NAME3,contentValues,"email = ?", new String[]{email});
+
+        return true;
+
+    }
+
 
 
     // Add a single worker
@@ -175,9 +356,9 @@ public class DbHandler extends SQLiteOpenHelper {
 
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(NAME,workerAdd.getName());
-        contentValues.put(EMAILW, workerAdd.getEmail());
-        contentValues.put(PRICE,workerAdd.getPrice());
+        contentValues.put(WORKER_NAME,workerAdd.getName());
+        contentValues.put(EMAIL, workerAdd.getEmail());
+        contentValues.put(SALARY,workerAdd.getPrice());
         contentValues.put(CATEGORY,workerAdd.getCategory());
 
         //save to table
@@ -187,53 +368,7 @@ public class DbHandler extends SQLiteOpenHelper {
         System.out.println("Success");
     }
 
-
-//    //count the table record
-//    public int countToDo(){
-//        SQLiteDatabase db = getReadableDatabase();
-//
-//        String query = " SELECT * FROM " + TABLE_NAME;
-//
-//        Cursor cursor  = db.rawQuery(query,null);
-//        int x = cursor.getCount();
-//         System.out.println(x);
-//         return 0;
-//
-//    }
-
-
-//    public List<Worker> getAllWorkers(){
-//
-//        List<Worker> workerList = new ArrayList();
-//
-//        SQLiteDatabase db = getReadableDatabase();
-//
-//        String query = "SELECT * FROM "+TABLE_NAME;
-//
-//        Cursor cursor = db.rawQuery(query,null);
-//
-//        if(cursor.moveToFirst()){
-//            do {
-//                // Create new object
-//                Worker work = new Worker();
-//                // mmgby6hh
-//                work.setId(cursor.getInt(0));
-//                work.setName(cursor.getString(1));
-//                work.setEmail(cursor.getString(2));
-//                work.setPrice(cursor.getString(3));
-//                work.setCategory(cursor.getString(4));
-//
-//                //toDos [obj,objs,asas,asa]
-//               workerList.add(work);
-//            }while (cursor.moveToNext());
-//        }
-//        return workerList;
-//    }
-
-    //Display list
-
-
-   public List<Worker> getAllWorkers(String computing){
+    public List<Worker> getAllComputerWorkers(String computing){
     //public List<Worker> getAllWorkers(){
         List <Worker> data = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
@@ -241,7 +376,7 @@ public class DbHandler extends SQLiteOpenHelper {
       //  String query ="SELECT * FROM " + TABLE_NAME;
 
        // Cursor cursor = db.rawQuery(query,null);
-      Cursor cursor = db.query(TABLE_NAME,new String[]{ID,NAME,EMAILW,PRICE,CATEGORY},CATEGORY+ "=?", new String[]{computing},null,null,null);
+      Cursor cursor = db.query(TABLE_NAME,new String[]{WORKER_ID,WORKER_NAME,EMAIL,SALARY,CATEGORY},CATEGORY+ "=?", new String[]{computing},null,null,null);
 
         if(cursor.moveToFirst()){
             do{

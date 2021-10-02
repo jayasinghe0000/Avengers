@@ -38,7 +38,7 @@ public class computing extends AppCompatActivity {
         listView = findViewById(R.id.listView2);
         listt = new ArrayList<>();
         //  listt = dbHandler.getAllWorkers();
-        listt = dbHandler.getAllWorkers("computing");
+        listt = dbHandler.getAllComputerWorkers("computing");
         //data =dbHandler.getAllWorkers();
 
         WorkerAddapter workerAddapter = new WorkerAddapter(context,R.layout.single_row,listt);

@@ -1,5 +1,7 @@
 package com.example.avengers;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       t1=findViewById(R.id.textView9);
-       t2=findViewById(R.id.textView10);
+        t1=findViewById(R.id.tx1);
+        t2=findViewById(R.id.tx2);
         btn1=findViewById(R.id.payment_btn1);
         btn2=findViewById(R.id.payment_btn2);
         img1=findViewById(R.id.pay_img1);
@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
         //catch the values coming from relavent id.
         //final String id=getIntent().getStringExtra("hire_id");
-       // public int getDura
+        // public int getDura
         //System.out.println(id);
         //HireModel hire=dbHandler.getSingleHire(Integer.parseInt(id));//string to int
 
-       //final String workerId=getIntent().getStringExtra("worker_id");
-       //WorkerModel worker=dbHandler.getSingleWorker(Integer.parseInt(workerId));//string to int
+        //final String workerId=getIntent().getStringExtra("worker_id");
+        //WorkerModel worker=dbHandler.getSingleWorker(Integer.parseInt(workerId));//string to int
         //System.out.println(workerId);
 
         //List<HireModel> hires=dbHandler.getAllHireDetail();
@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
         //t1.setText(String.valueOf(ans));
         //System.out.println(ans);
         //edit2.setText(worker.getSalary());
-      //System.out.println(hire.getCustomerName());
-      //System.out.println(hire.getWorker());
+        //System.out.println(hire.getCustomerName());
+        //System.out.println(hire.getWorker());
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
